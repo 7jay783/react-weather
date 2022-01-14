@@ -1,0 +1,32 @@
+.mainContainer{
+   
+    height: 80vh;
+    width:30vw;
+    background-color: white;
+    margin: 5rem auto;
+    border-radius: 8px;
+    padding: 10px;
+}
+.custom_field{
+   padding-top: 2rem;
+}
+.custom_field input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width:20vw;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 400px) {
+    .mainContainer {
+        height: 100vh;
+        width:100vw;
+        margin:auto;
+        border-radius: 0px;
+    }
+  }
