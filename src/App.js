@@ -5,7 +5,7 @@ import WeatherByCity from './components/WeatherByCity';
 function App() {
   return (
     <div className="App">
-     <SearchWeather/>
+     <SearchWeather />
      <WeatherByCity/>
     </div>
   );

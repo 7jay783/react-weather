@@ -20,7 +20,7 @@ function WeatherByCity() {
     return ( allData!= null?
         <div className='mainContainer'>           
             <div className="custom_field"> 
-                <input placeholder='Enter city' onChange={e=>setsearch(e.target.value)} id="search field" type="text"/>
+                <input placeholder='Enter city/ District' onChange={e=>setsearch(e.target.value)} id="search field" type="text"/>
             </div>         
            
             <div>
@@ -101,9 +101,11 @@ function WeatherByCity() {
                     </tbody>
                    
                 </table>
-                
+               
+
             </div>
         </div>
+        <h4>By: Jay Prakash | 12/01/2022</h4>
         </div>:<div>Data not found</div>
     )
 }

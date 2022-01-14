@@ -3,7 +3,7 @@
     height: 80vh;
     width:30vw;
     background-color: white;
-    margin: 5rem auto;
+    margin: 1rem auto;
     border-radius: 8px;
     padding: 10px;
 }
@@ -39,9 +39,22 @@ td {
   
   @media screen and (max-width: 400px) {
     .mainContainer {
-        height: 100vh;
+        height: 70vh;
+        /* border-bottom: 10px transparent ; */
         width:100vw;
-        margin:auto;
+        margin:0px auto 5px ;
         border-radius: 0px;
+    }
+    .custom_field input {
+      border: none;
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: #c5c4c4;
+      padding: 8px;
+      border-radius: 5px;
+      width:80vw;
+      font-size: 14px;
     }
   }
