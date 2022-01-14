@@ -122,7 +122,7 @@ const res = await response.json();
                     
                 </div>
             </div>
-          </div>:<div>Data not found</div>
+          </div>:null
     )
 }
 
