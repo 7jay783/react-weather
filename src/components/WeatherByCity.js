@@ -11,7 +11,7 @@ function WeatherByCity() {
          .then((res)=>{          
              setAllData(res.data);
              seticonurl(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}.png`)
-             console.log(res.data);
+             
          })
        
         
@@ -29,7 +29,7 @@ function WeatherByCity() {
             <hr/>
                 
                 <span style={{fontSize:'30px'}}>{allData.name}</span><br/>
-                <span style={{fontSize:'60px'}}>{allData.main.temp}<sup style={{fontSize:'30px'}}> <span> &#8451;</span> </sup></span><br/>
+                <span style={{fontSize:'60px'}}>{Math.floor(allData.main.temp)}<sup style={{fontSize:'30px'}}> <span> &#8451;</span> </sup></span><br/>
                 <span>{allData.weather[0].main}</span><br/>
                 <span></span>
             </div>
@@ -37,15 +37,74 @@ function WeatherByCity() {
                 
                 <img src={iconurl} alt=''/>
             </div>  
-            <div>
-                 <label>Wind Direction: </label>
-                 <span>{allData.wind.deg}</span>
-            </div> 
-            <div>
-                 <label>Wind Speed: </label>
-                 <span>{allData.wind.speed}</span>
-            </div> 
-        </div>:null
+           
+           <div className='weather_details'>
+            <div className='table1'>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h5>Wind direction: </h5>
+                        </td>
+                        <td>
+                            <span>{allData.wind.deg}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Wind speed: </h5>
+                        </td>
+                        <td>
+                        <span>{allData.wind.speed}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Humidity: </h5>
+                        </td>
+                        <td>
+                        <span>{allData.main.humidity} %</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                   
+                </table>
+              
+            </div>
+            <div className='table2'>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h5>Sunrise: </h5>
+                        </td>
+                        <td>
+                            <span>{new Date(allData.sys.sunrise*1000).toLocaleTimeString()}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Sunset: </h5>
+                        </td>
+                        <td>
+                        <span>{new Date(allData.sys.sunset*1000).toLocaleTimeString()}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Pressure: </h5>
+                        </td>
+                        <td>
+                        <span>{allData.main.pressure} hPa</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                   
+                </table>
+                
+            </div>
+        </div>
+        </div>:<div>Data not found</div>
     )
 }
 
